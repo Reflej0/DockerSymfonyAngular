@@ -1,0 +1,9 @@
+﻿<h1>Hola {{currentUser.username}} !</h1>
+<p>Actualmente usted esta logeado!</p>
+<h3>Todos los usuarios registrados:</h3>
+<ul>
+    <li *ngFor="let user of users">
+        {{user.id}} ({{user.roles}}) ({{user.email}})
+         <a *ngIf="isAdmin" (click)="deleteUser(user.id)" class="text-danger">Eliminar</a>
+    </li>
+</ul>

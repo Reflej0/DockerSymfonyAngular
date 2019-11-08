@@ -1,0 +1,21 @@
+version: "2"
+services:
+  front:
+    build: .
+    volumes:
+      - "/app/node_modules"
+      - ".:/app"   
+    networks:
+      - angular-network
+  nginx-front:
+    image: nginx:latest
+    ports:
+        - "80:80"
+    volumes:
+        - ./site.conf:/etc/nginx/conf.d/default.conf
+    networks:
+        - angular-network
+
+networks:
+    angular-network:
+        driver: bridge

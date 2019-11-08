@@ -1,0 +1,3 @@
+La primera vez entrar al contenedor docker exec -it containerid bash
+realizar composer install en /symfony
+y chmod -R 777 ./var
